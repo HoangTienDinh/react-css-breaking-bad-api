@@ -5,15 +5,15 @@ import CharacterGrid from "./components/characters/CharacterGrid";
 import Search from "./components/ui/Search";
 import axios from "axios";
 
-
 function App() {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(
-        `https://www.breakingbadapi.com/api/characters`
+        `https://www.breakingbadapi.com/api/characters?name=${query}`
       );
 
       setItems(result.data);
@@ -21,12 +21,14 @@ function App() {
     };
 
     fetchItems();
-  }, []);
+  }, [query]);
+
+  console.log("HERE", query)
 
   return (
     <div className="container">
       <Header />
-      <Search />
+      <Search getQuery={(q) => setQuery(q)} />
       <CharacterGrid isLoading={isLoading} items={items} />
     </div>
   );
