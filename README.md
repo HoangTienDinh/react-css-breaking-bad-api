@@ -1,5 +1,6 @@
 # Breaking Bad API - React
-Playing with the Breaking Bad API built out on React.
+Practicing with the Breaking Bad API built out on React.  
+Play with it live at https://unruffled-jennings-2056ed.netlify.app/
 
 ### Take a Look
 ![Breaking Bad API Demo](https://github.com/HoangTienDinh/react-css-breaking-bad-api/blob/master/public/breaking-bad.gif)
